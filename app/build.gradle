@@ -23,9 +23,8 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility rootProject.ext.compileOptions.sourceCompatibility
-        targetCompatibility rootProject.ext.compileOptions.targetCompatibility
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 
@@ -36,6 +35,11 @@ dependencies {
     implementation "androidx.core:core-ktx:$versions.core_ktx"
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.3'
+
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
