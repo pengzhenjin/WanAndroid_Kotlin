@@ -1,11 +1,9 @@
 package com.pzj.wanandroid_kotlin
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import com.pzj.wanandroid_kotlin.base.BaseActivity
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
+class MainActivity : BaseActivity() {
+
+    override fun getLayoutId(): Int = R.layout.activity_main
+
 }

@@ -3,8 +3,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "30.0.0"
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
 
     defaultConfig {
         applicationId rootProject.ext.app.appId
@@ -23,8 +23,13 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility rootProject.ext.java.version
+        targetCompatibility rootProject.ext.java.version
+    }
+
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = rootProject.ext.java.version
     }
 }
 
@@ -33,14 +38,19 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "androidx.core:core-ktx:$versions.core_ktx"
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.3'
+    implementation "androidx.appcompat:appcompat:$versions.appcompat"
+    implementation "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
 
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle_ktx"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle_ktx"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle_ktx"
+    implementation "androidx.fragment:fragment-ktx:$versions.fragment_ktx"
 
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.converter_gson"
+    implementation "com.squareup.okhttp3:logging-interceptor:$versions.logging_interceptor"
+
+    testImplementation "junit:junit:$versions.test"
+    androidTestImplementation "androidx.test.ext:junit:$versions.test_ext"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$versions.test_espresso_core"
 }
