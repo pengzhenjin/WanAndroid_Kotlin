@@ -1,17 +1,17 @@
 package com.pzj.wanandroid_kotlin.base
 
 import android.os.Bundle
-import androidx.activity.viewModels
+import android.view.View
 
 /**
- * @desc: BaseVMActivity
+ * @description: BaseVMFragment
  * @author: pengzhenjin
- * @date: 2020/10/28
+ * @date: 2020/10/30
  */
-abstract class BaseVMActivity : BaseActivity() {
+abstract class BaseVMFragment : BaseFragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         initData()
         startDataObserver()
     }

@@ -18,6 +18,27 @@ abstract class BaseFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return inflater.inflate(getLayoutId(), container, false)
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initView()
+        initEvent()
+    }
+
+    /**
+     * 获取布局文件id
+     */
+    abstract fun getLayoutId(): Int
+
+    /**
+     * 初始化 View
+     */
+    open fun initView() {}
+
+    /**
+     * 初始化事件
+     */
+    open fun initEvent() {}
 }

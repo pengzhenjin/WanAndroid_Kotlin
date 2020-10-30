@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.pzj.wanandroid_kotlin.ui.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/navigation_project"
+        android:name="com.pzj.wanandroid_kotlin.ui.ProjectFragment"
+        android:label="ProjectFragment"
+        tools:layout="@layout/fragment_project" />
+    <fragment
+        android:id="@+id/navigation_nav"
+        android:name="com.pzj.wanandroid_kotlin.ui.NavigationFragment"
+        android:label="NavigationFragment"
+        tools:layout="@layout/fragment_navigation" />
+    <fragment
+        android:id="@+id/navigation_tree"
+        android:name="com.pzj.wanandroid_kotlin.ui.TreeFragment"
+        android:label="TreeFragment"
+        tools:layout="@layout/fragment_tree" />
+    <fragment
+        android:id="@+id/navigation_mine"
+        android:name="com.pzj.wanandroid_kotlin.ui.MineFragment"
+        android:label="MineFragment"
+        tools:layout="@layout/fragment_mine" />
+</navigation>

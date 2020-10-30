@@ -41,6 +41,12 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$versions.appcompat"
     implementation "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
 
+    implementation "androidx.navigation:navigation-runtime-ktx:$versions.navigation_ktx"
+    implementation "androidx.navigation:navigation-fragment-ktx:$versions.navigation_ktx"
+    implementation "androidx.navigation:navigation-ui-ktx:$versions.navigation_ktx"
+
+    implementation "com.google.android.material:material:$versions.material"
+
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle_ktx"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle_ktx"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle_ktx"
@@ -49,6 +55,11 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
     implementation "com.squareup.retrofit2:converter-gson:$versions.converter_gson"
     implementation "com.squareup.okhttp3:logging-interceptor:$versions.logging_interceptor"
+
+    implementation "com.github.bumptech.glide:glide:$versions.glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$versions.glide"
+
+    implementation "com.youth.banner:banner:$versions.banner"
 
     testImplementation "junit:junit:$versions.test"
     androidTestImplementation "androidx.test.ext:junit:$versions.test_ext"
